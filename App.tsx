@@ -9,8 +9,7 @@ const App = () => {
 
   return (
     <View>
-      <HeaderTabs activeTab={activeTab} />
-      <Home />
+      <Home activeTab={activeTab} setActiveTab={setActiveTab} />
     </View>
   )
 }

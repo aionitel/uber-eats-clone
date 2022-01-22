@@ -1,24 +1,20 @@
 import React, { createContext, useEffect, useState } from "react";
 
 interface HeaderTab {
-  text: 'Delivery'
+  header: string,
+  setText: (value: string) => void | null
 }
 
-const toggleType = () => {
-  
-}
-
-const HeaderContext = createContext<
-[HeaderTab, React.Dispatch<React.SetStateAction<HeaderTab>>]
->([{ text: "Delivery" }, () => {}])
+const HeaderContext = createContext<HeaderTab | null>({
+  header: "Delivery",
+  setText: null
+})
 
 const HeaderProvider = ({ children }: any) => {
-  const [state, setState] = useState<HeaderTab>({
-    text: 'Delivery'
-  });
+  const [state, setState] = useState(null)
 
     return (
-      <HeaderContext.Provider value={[state, setState]}>
+      <HeaderContext.Provider value={state, setState}>
         {children}
       </HeaderContext.Provider>
     );
