@@ -1,12 +1,17 @@
 import React from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { View, Text, SafeAreaView } from 'react-native'
+import { HeaderContext, HeaderProvider } from '../context/HeaderContext'
 
 const HeaderTabs: React.FC = () => {
+
   return (
-    <SafeAreaView style={{ flexDirection: 'row', alignSelf: 'center'}}>
-      <HeaderTab text='Delivery' />
-      <HeaderTab text='Pickup' />
-    </SafeAreaView>
+    <HeaderProvider>
+      <SafeAreaView style={{ flexDirection: 'row', alignSelf: 'center'}}>
+        <HeaderTab text='Delivery' />
+        <HeaderTab text='Pickup' />
+      </SafeAreaView>
+    </HeaderProvider>
   )
 }
 
