@@ -39,8 +39,8 @@ const HeaderTab: React.FC<HeaderTabProps> = ({ text, activeTab, setActiveTab }) 
         fontWeight: 'bold',
         fontSize: 20, 
         color: activeTab === text ? 'white' : 'black',
-        paddingHorizontal: 15,
-        paddingVertical: 8
+        paddingHorizontal: 20,
+        paddingVertical: 7
         }}
         >
         {text}</Text>
