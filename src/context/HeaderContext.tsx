@@ -4,7 +4,13 @@ interface HeaderTab {
   text: 'Delivery'
 }
 
-const HeaderContext = createContext({})
+const toggleType = () => {
+  
+}
+
+const HeaderContext = createContext<
+[HeaderTab, React.Dispatch<React.SetStateAction<HeaderTab>>]
+>([{ text: "Delivery" }, () => {}])
 
 const HeaderProvider = ({ children }: any) => {
   const [state, setState] = useState<HeaderTab>({
